@@ -44,9 +44,9 @@
     </style>
 </head>
 <body>
-<h1>KPZ Lab 6</h1>
+<h1>Coursework</h1>
 <ul>
-    <li><a href="app/Views/auth/login.php">Lab 6</a></li>
+    <li><a href="app/Views/auth/login.php">My coursework</a></li>
 </ul>
 </body>
 </html>

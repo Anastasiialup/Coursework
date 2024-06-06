@@ -1,7 +1,7 @@
 <?php
-require_once('C:\wamp64\www\KPZLabs\Lab6\config\database.php');
-require_once('C:\wamp64\www\KPZLabs\Lab6\app\Models\FinancialRecord.php');
-require_once('C:\wamp64\www\KPZLabs\Lab6\app\Models\Category.php');
+require_once('C:\wamp64\www\MyCoursework\config\database.php');
+require_once('C:\wamp64\www\MyCoursework\app\Models\FinancialRecord.php');
+require_once('C:\wamp64\www\MyCoursework\app\Models\Category.php');
 
 use App\Models\FinancialRecord;
 use App\Models\Category;
