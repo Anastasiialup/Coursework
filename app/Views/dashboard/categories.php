@@ -47,15 +47,28 @@ $categories = Category::getAll($conn, $user_id);
     <style>
         /* CSS стилі для вигляду */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Comic Sans MS";
             margin: 0;
             padding: 0;
+            background-color: #cbbdbd;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #674f4f;
+            color: #f1e9e9;
             padding: 10px;
             text-align: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
         }
         table {
             width: 80%;
@@ -69,16 +82,11 @@ $categories = Category::getAll($conn, $user_id);
             text-align: left;
         }
         th {
-            background-color: #333;
+            background-color: #674f4f;
             color: #fff;
         }
         .add-category-form {
             margin-bottom: 20px; /* Доданий відступ нижче форми */
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            text-align: center;
         }
         nav a {
             padding: 10px 20px;
@@ -98,13 +106,14 @@ $categories = Category::getAll($conn, $user_id);
             margin-right: 5px;
         }
         footer {
-            background-color: #333;
+            background-color: #674f4f;
             color: #fff;
             padding: 10px;
             text-align: center;
-            width: 98.7%;
-            position: relative;
-            bottom: 0;
+            width: 90%;
+            margin: 20px auto 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
 
         body {

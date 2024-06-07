@@ -1,5 +1,5 @@
 <header>
-    <h1>Dashboard - Overview</h1>
+    <h1>~ Your financial planner ~</h1>
 </header>
 <nav>
     <a href="../dashboard/index.php">Home</a>

@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Index</title>
+    <title>Your financial planner</title>
     <style>
         /* CSS стилі для вигляду */
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Comic Sans MS";
             margin: 0;
             padding: 0;
+            background-color: #cbbdbd;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #674f4f;
+            color: #f1e9e9;
             padding: 10px;
             text-align: center;
+            width: 90%;
+            margin: 0 auto;
         }
         nav {
             background-color: #f4f4f4;
             padding: 10px;
+            width: 90%;
             text-align: center;
+            margin: 0 auto;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
         }
         nav a {
             padding: 10px 20px;
@@ -34,13 +42,14 @@
             padding: 20px;
         }
         footer {
-            background-color: #333;
+            background-color: #674f4f;
             color: #fff;
             padding: 10px;
             text-align: center;
-            width: 98.7%;
-            position: relative;
-            bottom: 0;
+            width: 90%;
+            margin: 20px auto 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
 
         body {
