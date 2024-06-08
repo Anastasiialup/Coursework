@@ -72,6 +72,7 @@ if (isset($_GET['year2'])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,15 +81,14 @@ if (isset($_GET['year2'])) {
     <title>Overview</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* CSS styles for appearance */
+        /* CSS стилі для вигляду */
         body {
             font-family: "Comic Sans MS";
             margin: 0;
             padding: 0;
-            background-color: #cbbdbd;
-        }
+            background-image: url('https://static.wixstatic.com/media/aafcc4_88e3f58195dc4a2d8c0a9f9e26b18984~mv2.png/v1/fill/w_1264,h_713,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Picsart_24-06-08_16-51-27-432.png');        }
         header {
-            background-color: #674f4f;
+            background-color: #705d5d;
             color: #f1e9e9;
             padding: 10px;
             text-align: center;
@@ -96,14 +96,13 @@ if (isset($_GET['year2'])) {
             margin: 0 auto;
         }
         nav {
-            background-color: #f4f4f4;
+            background-color: #eae3e3;
             padding: 10px;
             width: 90%;
             text-align: center;
             margin: 0 auto;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-
         }
         nav a {
             padding: 10px 20px;
@@ -115,6 +114,9 @@ if (isset($_GET['year2'])) {
         }
         main {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .chart-container {
             width: 50%;
@@ -124,11 +126,31 @@ if (isset($_GET['year2'])) {
             width: 100%;
             margin-bottom: 20px;
         }
-        select {
-            margin: 10px;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        select, input[type="text"], button {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            background-color: #705d5d;
+            color: #f1e9e9;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #856767;
         }
         footer {
-            background-color: #674f4f;
+            background-color: #705d5d;
             color: #fff;
             padding: 10px;
             text-align: center;
