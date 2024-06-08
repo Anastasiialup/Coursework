@@ -89,5 +89,32 @@ class User {
 
         return $result;
     }
+
+    public function updateProfileImage($id, $fileName) {
+        $stmt = $this->db->prepare("UPDATE users SET profile_image = :profile_image WHERE id = :id");
+        $result = $stmt->execute(['profile_image' => $fileName, 'id' => $id]);
+
+        return $result;
+    }
+// В класі User
+
+    public function getProfileImage($userId, $conn) {
+        try {
+            $stmt = $conn->prepare("SELECT profile_image FROM users WHERE id = ?");
+            $stmt->bindValue(1, $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                return $result['profile_image'];
+            } else {
+                return null;
+            }
+        } catch (PDOException $e) {
+            // Обробка помилок
+            return null;
+        }
+    }
+
 }
 ?>
