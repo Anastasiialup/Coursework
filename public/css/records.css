@@ -106,3 +106,20 @@ body {
 main {
     flex: 1;
 }
+
+.category-color-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.records-table tbody tr td:nth-child(6) .category-color-box {
+    background-color: var(--category-color);
+}
+
+:root {
+    --category-color: #ffffff; /* Колір за замовчуванням */
+}
+
+

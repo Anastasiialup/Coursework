@@ -70,6 +70,7 @@ if (isset($_GET['delete_record'])) {
             <th>Category</th>
             <th onclick="sortTable(3)">Description<span class="filter-icon" onclick="toggleFilter(3)">🔍</span></th>
             <th onclick="sortTable(4)">Amount<span class="filter-icon" onclick="toggleFilter(4)">🔍</span></th>
+            <th>Category Color</th> <!-- Додали новий заголовок стовпця -->
             <th>Action</th>
         </tr>
         </thead>
@@ -81,6 +82,9 @@ if (isset($_GET['delete_record'])) {
                 <td><?php $category = Category::getById($conn, $record['category_id']); echo $category['name']; ?></td>
                 <td><?php echo $record['description']; ?></td>
                 <td><?php echo $record['currency'] . ' ' . $record['amount']; ?></td>
+                <td> <!-- Додаємо стовпчик для кольору категорії -->
+                    <div class="category-color-box" style="background-color: <?php echo $category['color']; ?>"></div>
+                </td>
                 <td><a href="?delete_record=<?php echo $record['id']; ?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
