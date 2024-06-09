@@ -79,98 +79,9 @@ if (isset($_GET['year2'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview</title>
+    <link rel="stylesheet" href="../../../public/css/overview.css"> <!-- Вкажіть правильний шлях до CSS файлу -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* CSS стилі для вигляду */
-        body {
-            font-family: "Comic Sans MS";
-            margin: 0;
-            padding: 0;
-            background-image: url('https://static.wixstatic.com/media/aafcc4_88e3f58195dc4a2d8c0a9f9e26b18984~mv2.png/v1/fill/w_1264,h_713,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Picsart_24-06-08_16-51-27-432.png');        }
-        header {
-            background-color: #705d5d;
-            color: #f1e9e9;
-            padding: 10px;
-            text-align: center;
-            width: 90%;
-            margin: 0 auto;
-        }
-        nav {
-            background-color: #eae3e3;
-            padding: 10px;
-            width: 90%;
-            text-align: center;
-            margin: 0 auto;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-        nav a {
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #333;
-        }
-        nav a:hover {
-            background-color: #ddd;
-        }
-        main {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .chart-container {
-            width: 50%;
-            margin: auto;
-        }
-        .chart {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        select, input[type="text"], button {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #333;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 200px;
-        }
-        button {
-            background-color: #705d5d;
-            color: #f1e9e9;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #856767;
-        }
-        footer {
-            background-color: #705d5d;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            width: 90%;
-            margin: 20px auto 0;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main {
-            flex: 1;
-        }
-
-    </style>
+    <script src="../../../public/js/overview.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
 </head>
 <body>
 <?php include('../partials/header.php'); ?>
@@ -201,49 +112,15 @@ if (isset($_GET['year2'])) {
         <h2>Selected Month: <?php echo $selected_month . ' ' . $selected_year; ?></h2>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
+            <input type="hidden" id="chartDataJson" value='<?php echo $chart_data_json; ?>'>
         </div>
-        <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chartData = <?php echo $chart_data_json; ?>;
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: chartData.labels,
-                    datasets: chartData.datasets
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
     <?php endif; ?>
     <?php if (isset($yearChartDataJson)): ?>
         <h2>Statistics for Selected Year: <?php echo $selected_year2; ?></h2>
         <div class="chart-container">
             <canvas id="yearChart"></canvas>
+            <input type="hidden" id="yearChartDataJson" value='<?php echo $yearChartDataJson; ?>'>
         </div>
-        <script>
-            var yearChartData = <?php echo $yearChartDataJson; ?>;
-            var yearChartCtx = document.getElementById('yearChart').getContext('2d');
-            var yearChart = new Chart(yearChartCtx, {
-                type: 'bar',
-                data: {
-                    labels: yearChartData.labels,
-                    datasets: yearChartData.datasets
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
     <?php endif; ?>
 
 </main>

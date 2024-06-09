@@ -2,9 +2,9 @@
 
 // Конфігурація підключення до бази даних
 $servername = "localhost";
-$username = "root"; // Логін користувача бази даних
+$username = "root";
 $password = "";
-$dbname = "finance_app"; // Назва бази даних
+$dbname = "finance_app"; // Назва бази даних для наших фінансів
 
 try {
     // Підключення до бази даних

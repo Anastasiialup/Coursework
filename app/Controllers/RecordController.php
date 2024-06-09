@@ -27,4 +27,3 @@ class RecordController {
         $this->financialRecordModel->deleteFinancialRecord($id);
     }
 }
-?>
