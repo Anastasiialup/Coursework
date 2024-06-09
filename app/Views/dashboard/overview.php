@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../Models/FinancialRecord.php';
+require_once __DIR__ . '/../../Controllers/RecordController.php';
 require_once __DIR__ . '/../../../config/database.php';
 
 use app\Models\FinancialRecord;
