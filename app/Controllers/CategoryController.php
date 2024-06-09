@@ -1,7 +1,7 @@
 <?php
-namespace App\Controllers;
+namespace app\Controllers;
 
-use App\Models\Category;
+use app\Models\Category;
 use PDO;
 
 class CategoryController {

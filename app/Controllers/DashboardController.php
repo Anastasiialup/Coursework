@@ -1,8 +1,8 @@
 <?php
-namespace App\Controllers;
+namespace app\Controllers;
 
-use App\Models\FinancialRecord;
-use App\Models\Category;
+use app\Models\FinancialRecord;
+use app\Models\Category;
 
 class DashboardController {
     public function index() {

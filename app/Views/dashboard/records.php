@@ -1,10 +1,10 @@
 <?php
-require_once('C:\wamp64\www\MyCoursework\config\database.php');
-require_once('C:\wamp64\www\MyCoursework\app\Models\FinancialRecord.php');
-require_once('C:\wamp64\www\MyCoursework\app\Models\Category.php');
+require_once __DIR__ . '/../../Models/Category.php';
+require_once __DIR__ . '/../../Models/FinancialRecord.php';
+require_once __DIR__ . '/../../../config/database.php';
 
-use App\Models\FinancialRecord;
-use App\Models\Category;
+use app\Models\FinancialRecord;
+use app\Models\Category;
 
 session_start();
 if (!isset($_SESSION['user_id'])) {

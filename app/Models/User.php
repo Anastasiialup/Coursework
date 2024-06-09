@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace app\Models;
 
 use PDO;
 
@@ -11,7 +11,7 @@ class User {
             $this->db = $db;
         } else {
             // Підключення до бази даних
-            $config = require_once(__DIR__ . 'C:\wamp64\www\MyCoursework\config\database.php');
+            $config = require_once(__DIR__ . '/../../config/database.php');
             $dsn = "mysql:host={$config['servername']};dbname={$config['dbname']}";
             $this->db = new PDO($dsn, $config['username'], $config['password']);
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

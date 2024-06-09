@@ -1,8 +1,8 @@
 <?php
-require_once('C:\wamp64\www\MyCoursework\config\database.php');
-require_once('C:\wamp64\www\MyCoursework\app\Models\FinancialRecord.php');
+require_once __DIR__ . '/../../Models/FinancialRecord.php';
+require_once __DIR__ . '/../../../config/database.php';
 
-use App\Models\FinancialRecord;
+use app\Models\FinancialRecord;
 
 session_start();
 

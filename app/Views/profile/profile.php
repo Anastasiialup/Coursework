@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require_once('C:\wamp64\www\MyCoursework\app\Controllers\AuthController.php');
-require_once('C:\wamp64\www\MyCoursework\app\Models\User.php');
-require_once('C:\wamp64\www\MyCoursework\config\database.php');
+require_once __DIR__ . '/../../Controllers/AuthController.php';
+require_once __DIR__ . '/../../Models/User.php';
+require_once __DIR__ . '/../../../config/database.php';
 
-use App\Controllers\AuthController;
-use App\Models\User;
+use app\Controllers\AuthController;
+use app\Models\User;
 
 // Перевірка, чи користувач аутентифікований
 $authController = new AuthController(new User($conn));

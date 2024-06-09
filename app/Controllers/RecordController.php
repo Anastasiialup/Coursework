@@ -1,9 +1,9 @@
 <?php
 // RecordController.php
 
-namespace App\Controllers;
+namespace app\Controllers;
 
-use App\Models\FinancialRecord;
+use app\Models\FinancialRecord;
 use PDO;
 
 class RecordController {

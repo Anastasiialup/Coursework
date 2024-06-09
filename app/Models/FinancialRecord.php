@@ -1,7 +1,7 @@
 <?php
 // FinancialRecord.php
 
-namespace App\Models;
+namespace app\Models;
 
 use PDO;
 
