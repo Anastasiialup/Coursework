@@ -65,17 +65,17 @@ if (isset($_GET['delete_record'])) {
     <table id="records-table">
         <thead>
         <tr>
-            <th>Month</th>
-            <th>Year</th>
+            <th onclick="sortTable(0)">Month<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
+            <th onclick="sortTable(1)">Year<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
             <th>Category</th>
-            <th>Description</th>
-            <th>Amount</th>
+            <th onclick="sortTable(3)">Description<span class="filter-icon" onclick="toggleFilter(3)">🔍</span></th>
+            <th onclick="sortTable(4)">Amount<span class="filter-icon" onclick="toggleFilter(4)">🔍</span></th>
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($records as $record): ?>
-            <tr data-category-id="<?php echo $record['category_id']; ?>">
+            <tr data-category-id="<?php echo $record['category_id']; ?>" class="data-row"> <!-- Додаємо клас "data-row" -->
                 <td><?php echo $record['month']; ?></td>
                 <td><?php echo $record['year']; ?></td>
                 <td><?php $category = Category::getById($conn, $record['category_id']); echo $category['name']; ?></td>
@@ -84,6 +84,8 @@ if (isset($_GET['delete_record'])) {
                 <td><a href="?delete_record=<?php echo $record['id']; ?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
+
+
         </tbody>
     </table>
 

@@ -51,11 +51,11 @@ $categories = Category::getAll($conn, $user_id);
 
 <main>
     <!-- Таблиця для відображення категорій -->
-    <table>
+    <table id="categories-table">
         <thead>
         <tr>
-            <th>Category Name</th>
-            <th>Category Type</th>
+            <th onclick="sortTable(0)">Category Name<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
+            <th onclick="sortTable(1)">Category Type<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
             <th>Color</th>
             <th>Action</th>
         </tr>
@@ -88,5 +88,7 @@ $categories = Category::getAll($conn, $user_id);
 </main>
 
 <?php include('../partials/footer.php'); ?>
+
+<script src="../../../public/js/categories.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
 </body>
 </html>
