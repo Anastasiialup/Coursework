@@ -18,7 +18,7 @@
     </div>
     <!-- Новий контейнер для корисних ресурсів -->
     <div class="text-container">
-        <h3>Корисні ресурси з фінансового планування</h3>
+        <h2>Корисні ресурси з фінансового планування</h2>
         <ul>
             <li><a href="https://financer.com/ua/blog/finansove-planuvannia/" target="_blank">Фінансове планування, або як жити так, щоб вистачило на все</a></li>
             <li><a href="https://economyandsociety.in.ua/index.php/journal/article/view/2731" target="_blank">ФІНАНСОВЕ ПЛАНУВАННЯ НА ПІДПРИЄМСТВІ</a></li>

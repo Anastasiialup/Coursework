@@ -96,7 +96,7 @@ if (isset($_GET['delete_record'])) {
         </tbody>
     </table>
     <div class="container">
-        <h1>Конвертатор валют</h1>
+        <h2>Конвертатор валют</h2>
         <input type="number" id="amount" placeholder="Введіть кількість">
         <select id="fromCurrency">
             <!-- Список валют буде заповнено динамічно -->
@@ -108,6 +108,7 @@ if (isset($_GET['delete_record'])) {
         <p id="result"></p>
     </div>
 
+    <h2>Додати запис</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="month">Місяць:</label><br>
         <input type="text" id="month" name="month" required><br>
