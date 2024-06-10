@@ -61,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_photo'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
+    <title>Профіль користувача</title>
     <link rel="stylesheet" href="../../../public/css/profile.css">
 </head>
 <body>
@@ -74,22 +74,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_photo'])) {
     <div class="profile-picture">
         <?php
         if (!empty($userProfile['profile_image'])) {
-            echo '<img src="../../../public/uploads/' . $userProfile['profile_image'] . '" alt="Profile Picture">';
+            echo '<img src="../../../public/uploads/' . $userProfile['profile_image'] . '" alt="Фото профілю">';
         } else {
-            echo '<img src="../../../public/uploads/default.jpg" alt="Default Profile Picture">';
+            echo '<img src="../../../public/uploads/default.jpg" alt="Фото профілю за замовчуванням">';
         }
         ?>
     </div>
     <div class="profile-info">
         <div class="profile-section">
-            <h2>Welcome, <?php echo $username; ?>!</h2>
+            <h2>Ласкаво просимо, <?php echo $username; ?>!</h2>
 
             <!-- Форма для оновлення профілю -->
-            <h2>Update Profile</h2>
+            <h2>Оновлення профілю</h2>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                <label for="new_username">New Username:</label>
+                <label for="new_username">Нове ім'я користувача:</label>
                 <input type="text" id="new_username" name="new_username" value="<?php echo $userProfile['username']; ?>">
-                <input type="submit" name="update_profile" value="Update Profile">
+                <input type="submit" name="update_profile" value="Оновити профіль">
             </form>
 
             <!-- Форма для оновлення фотографії профілю -->
@@ -106,20 +106,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_photo'])) {
             <div class="forms-container">
                 <!-- Форма для виходу з сесії -->
                 <div class="form-item">
-                    <h2>Logout</h2>
+                    <h2>Вихід</h2>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <p>Are you sure you want to leave your session?</p>
-                        <input type="submit" name="logout" value="Logout">
+                        <p>Ви впевнені, що хочете закрити сесію?</p>
+                        <input type="submit" name="logout" value="Вийти">
                         <p></p> <!-- Порожній абзац для вирівнювання -->
                     </form>
                 </div>
 
                 <!-- Форма для видалення акаунта -->
                 <div class="form-item">
-                    <h2>Delete Account</h2>
+                    <h2>Видалити акаунт</h2>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <p>Are you sure you want to delete your account?</p>
-                        <input type="submit" name="delete_account" value="Delete Account">
+                        <p>Ви впевнені, що хочете видалити свій акаунт?</p>
+                        <input type="submit" name="delete_account" value="Видалити акаунт">
                     </form>
                 </div>
             </div>

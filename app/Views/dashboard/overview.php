@@ -102,22 +102,22 @@ if (isset($_GET['year2'])) {
             <option value="November">November</option>
             <option value="December">December</option>
         </select>
-        <input type="text" name="year" id="year" placeholder="Enter Year" required>
-        <button type="submit">Show</button>
+        <input type="text" name="year" id="year" placeholder="Введіть рік" required>
+        <button type="submit">Показати</button>
     </form>
     <form action="overview.php" method="get">
-        <input type="text" name="year2" id="year2" placeholder="Enter Year for Statistics" required>
-        <button type="submit">Show Statistics</button>
+        <input type="text" name="year2" id="year2" placeholder="Введіть рік для статистики" required>
+        <button type="submit">Показати статистику</button>
     </form>
     <?php if (isset($chart_data_json)): ?>
-        <h2>Selected Month: <?php echo $selected_month . ' ' . $selected_year; ?></h2>
+        <h2>Вибраний місяць: <?php echo $selected_month . ' ' . $selected_year; ?></h2>
         <div class="chart-container">
             <canvas id="myChart"></canvas>
             <input type="hidden" id="chartDataJson" value='<?php echo $chart_data_json; ?>'>
         </div>
     <?php endif; ?>
     <?php if (isset($yearChartDataJson)): ?>
-        <h2>Statistics for Selected Year: <?php echo $selected_year2; ?></h2>
+        <h2>Статистика для вибраного року: <?php echo $selected_year2; ?></h2>
         <div class="chart-container">
             <canvas id="yearChart"></canvas>
             <input type="hidden" id="yearChartDataJson" value='<?php echo $yearChartDataJson; ?>'>

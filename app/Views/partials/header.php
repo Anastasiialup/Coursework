@@ -1,12 +1,12 @@
 <header>
-    <h1>~ Your financial planner ~</h1>
+    <h1>~ Ваш фінансовий планер ~</h1>
 </header>
 <nav>
-    <a href="../dashboard/index.php">Home</a>
-    <a href="../dashboard/records.php">Records</a>
-    <a href="../dashboard/categories.php">Categories</a>
-    <a href="../dashboard/saves.php">Saves</a>
-    <a href="../dashboard/overview.php">Overview</a>
-    <a href="../dashboard/about.php">About us</a>
-    <a href="../profile/profile.php">Profile</a>
+    <a href="../dashboard/index.php">Головна</a>
+    <a href="../dashboard/records.php">Записи</a>
+    <a href="../dashboard/categories.php">Категорії</a>
+    <a href="../dashboard/saves.php">Гаманець</a>
+    <a href="../dashboard/overview.php">Статистика</a>
+    <a href="../dashboard/about.php">Поо нас</a>
+    <a href="../profile/profile.php">Профіль</a>
 </nav>

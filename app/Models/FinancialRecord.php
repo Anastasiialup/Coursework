@@ -124,6 +124,52 @@ class FinancialRecord {
             return []; // Повертаємо пустий масив у випадку помилки
         }
     }
+    public static function getTotalByCategory(PDO $pdo, $user_id, $category_name) {
+        try {
+            $stmt = $pdo->prepare("SELECT SUM(amount) AS total FROM financial_records 
+                                    JOIN categories ON financial_records.category_id = categories.id 
+                                    WHERE categories.name = :category_name AND financial_records.user_id = :user_id");
+            $stmt->bindParam(':category_name', $category_name);
+            $stmt->bindParam(':user_id', $user_id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['total'] ?? 0;
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return 0;
+        }
+    }
+
+    public static function getTotalByType(PDO $pdo, $user_id, $type) {
+        try {
+            $stmt = $pdo->prepare("SELECT SUM(amount) AS total FROM financial_records WHERE type = :type AND user_id = :user_id");
+            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':user_id', $user_id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['total'] ?? 0;
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return 0;
+        }
+    }
+
+    public static function getWalletBalance(PDO $pdo, $user_id) {
+        try {
+            $stmt = $pdo->prepare("SELECT 
+                                        (SELECT SUM(amount) FROM financial_records WHERE type = 'income' AND user_id = :user_id) 
+                                        - 
+                                        (SELECT SUM(amount) FROM financial_records WHERE type = 'expense' AND user_id = :user_id) 
+                                        AS balance");
+            $stmt->bindParam(':user_id', $user_id);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['balance'] ?? 0;
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return 0;
+        }
+    }
 }
 
 ?>

@@ -1,6 +1,5 @@
 <?php
 // Category.php
-
 namespace app\Models;
 
 use PDO;
@@ -40,5 +39,4 @@ class Category {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 }

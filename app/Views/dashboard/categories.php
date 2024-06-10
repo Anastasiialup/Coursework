@@ -54,10 +54,10 @@ $categories = Category::getAll($conn, $user_id);
     <table id="categories-table">
         <thead>
         <tr>
-            <th onclick="sortTable(0)">Category Name<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
-            <th onclick="sortTable(1)">Category Type<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
-            <th>Color</th>
-            <th>Action</th>
+            <th onclick="sortTable(0)">Назва категорії<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
+            <th onclick="sortTable(1)">Тип категорії<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
+            <th>Колір</th>
+            <th>Дії</th>
         </tr>
         </thead>
         <tbody id="category-list">
@@ -66,7 +66,7 @@ $categories = Category::getAll($conn, $user_id);
                 <td><?php echo $category['name']; ?></td>
                 <td><?php echo $category['type']; ?></td>
                 <td><span class="category-color-box" style="background-color: <?php echo $category['color']; ?>"></span></td>
-                <td><a href="?delete_category=<?php echo $category['id']; ?>">Delete</a></td>
+                <td><a href="?delete_category=<?php echo $category['id']; ?>">Видалити</a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -74,16 +74,16 @@ $categories = Category::getAll($conn, $user_id);
 
     <!-- Форма для додавання нової категорії -->
     <form class="add-category-form" method="post">
-        <label for="category-name">New Category Name:</label>
+        <label for="category-name">Назва нової категорї:</label>
         <input type="text" id="category-name" name="category_name" required>
-        <label for="category-type">Category Type:</label>
+        <label for="category-type">Тип нової категорії:</label>
         <select id="category-type" name="category_type" required>
             <option value="income">Income</option>
             <option value="expense">Expense</option>
         </select>
-        <label for="category-color">Category Color:</label>
+        <label for="category-color">Колір нової категорії:</label>
         <input type="color" id="category-color" name="category_color" required>
-        <button type="submit">Add Category</button>
+        <button type="submit">Додати нову категорію</button>
     </form>
 </main>
 

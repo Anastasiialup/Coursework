@@ -11,17 +11,30 @@
 
 <main>
     <div class="text-container">
-        <h2>Welcome to Your Financial Planner!</h2>
-        <p>Here you can manage your finances effectively.</p>
-        <p>You can plan your finances, view detailed information about your income and expenses, analyze your financial data through graphs and charts, manage categories, and customize your profile.</p>
-        <p>Click on the tabs above to explore different sections of the dashboard.</p>
+        <h2>Ласкаво просимо до Вашого фінансового планувальника!</h2>
+        <p>Тут ви можете ефективно керувати своїми фінансами.</p>
+        <p>Ви можете планувати свої фінанси, переглядати детальну інформацію про ваш дохід та витрати, аналізувати ваші фінансові дані за допомогою графіків та діаграм, керувати категоріями та налаштовувати ваш профіль.</p>
+        <p>Натисніть на вкладки вище, щоб дослідити різні розділи панелі інструментів.</p>
     </div>
+    <!-- Новий контейнер для корисних ресурсів -->
+    <div class="text-container">
+        <h3>Корисні ресурси з фінансового планування</h3>
+        <ul>
+            <li><a href="https://financer.com/ua/blog/finansove-planuvannia/" target="_blank">Фінансове планування, або як жити так, щоб вистачило на все</a></li>
+            <li><a href="https://economyandsociety.in.ua/index.php/journal/article/view/2731" target="_blank">ФІНАНСОВЕ ПЛАНУВАННЯ НА ПІДПРИЄМСТВІ</a></li>
+            <li><a href="https://finx.com.ua/blog/top-10-knig-dlya-povysheniya-finansovoy-gramotnosti" target="_blank">ТОП-10 книг для підвищення фінансової грамотності</a></li>
+            <li><a href="https://www.universalbank.com.ua/blog/5-krokiv-dlya-efektivnogo-planuvannya-vlasnogo-byudzhetu" target="_blank">5 кроків для ефективного планування власного бюджету</a></li>
+            <li><a href="https://www.investopedia.com" target="_blank">Investopedia</a></li>
+        </ul>
+    </div>
+    <!-- Кінець нового контейнера -->
     <div class="gallery">
-        <img src="https://kartinki.pics/uploads/posts/2021-03/thumbs/1616072299_47-p-finansi-krasivie-foto-51.jpg" alt="Finance Image 1">
-        <img src="https://kartinki.pics/uploads/posts/2021-03/1616072235_5-p-finansi-krasivie-foto-7.jpg" alt="Finance Image 2">
-        <img src="https://balthazar.club/uploads/posts/2023-01/1674323043_balthazar-club-p-finansi-estetika-oboi-8.jpg" alt="Finance Image 3">
+        <img src="https://kartinki.pics/uploads/posts/2021-03/thumbs/1616072299_47-p-finansi-krasivie-foto-51.jpg" alt="Зображення Фінансів 1">
+        <img src="https://kartinki.pics/uploads/posts/2021-03/1616072235_5-p-finansi-krasivie-foto-7.jpg" alt="Зображення Фінансів 2">
+        <img src="https://balthazar.club/uploads/posts/2023-01/1674323043_balthazar-club-p-finansi-estetika-oboi-8.jpg" alt="Зображення Фінансів 3">
     </div>
 </main>
+
 
 <?php include('../partials/footer.php'); ?>
 </body>

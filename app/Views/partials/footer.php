@@ -1,3 +1,3 @@
 <footer>
-    <p>&copy; 2024 Financial planner website. All rights reserved.</p>
+    <p>&copy; 2024 Сайт фінансового планування. Всі права зарезервовано.</p>
 </footer>

@@ -53,7 +53,7 @@ if (isset($_GET['delete_record'])) {
 <body>
 <?php include('../partials/header.php'); ?>
 <main>
-    <label for="category-filter">Filter by Category:</label>
+    <label for="category-filter">Фільтр категорій:</label>
     <select id="category-filter">
         <option value="">All</option>
         <?php
@@ -63,18 +63,18 @@ if (isset($_GET['delete_record'])) {
         }
         ?>
     </select>
-    <button id="apply-filters">Apply Filters</button>
+    <button id="apply-filters">Застосувати фільтр</button>
 
     <table id="records-table">
         <thead>
         <tr>
-            <th onclick="sortTable(0)">Month<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
-            <th onclick="sortTable(1)">Year<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
-            <th>Category</th>
-            <th onclick="sortTable(3)">Description<span class="filter-icon" onclick="toggleFilter(3)">🔍</span></th>
-            <th onclick="sortTable(4)">Amount<span class="filter-icon" onclick="toggleFilter(4)">🔍</span></th>
-            <th>Category Color</th> <!-- Додали новий заголовок стовпця -->
-            <th>Action</th>
+            <th onclick="sortTable(0)">Місяць<span class="filter-icon" onclick="toggleFilter(0)">🔍</span></th>
+            <th onclick="sortTable(1)">Рік<span class="filter-icon" onclick="toggleFilter(1)">🔍</span></th>
+            <th>Категорія</th>
+            <th onclick="sortTable(3)">Опис<span class="filter-icon" onclick="toggleFilter(3)">🔍</span></th>
+            <th onclick="sortTable(4)">Кількість<span class="filter-icon" onclick="toggleFilter(4)">🔍</span></th>
+            <th>Колір категорії</th> <!-- Додали новий заголовок стовпця -->
+            <th>Дії</th>
         </tr>
         </thead>
         <tbody>
@@ -88,7 +88,7 @@ if (isset($_GET['delete_record'])) {
                 <td> <!-- Додаємо стовпчик для кольору категорії -->
                     <div class="category-color-box" style="background-color: <?php echo $category['color']; ?>"></div>
                 </td>
-                <td><a href="?delete_record=<?php echo $record['id']; ?>">Delete</a></td>
+                <td><a href="?delete_record=<?php echo $record['id']; ?>">Видалити</a></td>
             </tr>
         <?php endforeach; ?>
 
@@ -96,8 +96,8 @@ if (isset($_GET['delete_record'])) {
         </tbody>
     </table>
     <div class="container">
-        <h1>Конвертер Валют</h1>
-        <input type="number" id="amount" placeholder="Введіть суму">
+        <h1>Конвертатор валют</h1>
+        <input type="number" id="amount" placeholder="Введіть кількість">
         <select id="fromCurrency">
             <!-- Список валют буде заповнено динамічно -->
         </select>
@@ -109,11 +109,11 @@ if (isset($_GET['delete_record'])) {
     </div>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="month">Month:</label><br>
+        <label for="month">Місяць:</label><br>
         <input type="text" id="month" name="month" required><br>
-        <label for="year">Year:</label><br>
+        <label for="year">Рік:</label><br>
         <input type="number" id="year" name="year" required><br>
-        <label for="category_id">Category:</label><br>
+        <label for="category_id">Категорія:</label><br>
         <select id="category_id" name="category_id" required>
             <?php
             foreach ($categories as $category) {
@@ -121,20 +121,20 @@ if (isset($_GET['delete_record'])) {
             }
             ?>
         </select><br>
-        <label for="description">Description:</label><br>
+        <label for="description">Опис:</label><br>
         <input type="text" id="description" name="description" required><br>
-        <label for="attachment">Attachment:</label><br>
+        <label for="attachment">Вкладення:</label><br>
         <input type="text" id="attachment" name="attachment" required><br>
-        <label for="currency">Currency:</label><br>
+        <label for="currency">Валюта:</label><br>
         <input type="text" id="currency" name="currency" required><br>
-        <label for="amount">Amount:</label><br>
+        <label for="amount">Кількість:</label><br>
         <input type="number" id="amount" name="amount" step="0.01" required><br>
-        <label for="type">Type:</label><br>
+        <label for="type">Тип:</label><br>
         <select id="type" name="type" required>
             <option value="income">Income</option>
             <option value="expense">Expense</option>
         </select><br>
-        <button type="submit">Add Record</button>
+        <button type="submit">Додати запис</button>
     </form>
 
 </main>

@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('https://static.wixstatic.com/media/aafcc4_88e3f58195dc4a2d8c0a9f9e26b18984~mv2.png/v1/fill/w_1264,h_713,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Picsart_24-06-08_16-51-27-432.png');
+    background-size: cover;
 }
 
 header {
@@ -35,13 +36,24 @@ nav a:hover {
 }
 
 main {
-    padding: 20px;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    flex: 1;
+}
+
+.container-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.text-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    width: 45%; /* Adjust width to fit two containers in a row */
 }
 
 footer {

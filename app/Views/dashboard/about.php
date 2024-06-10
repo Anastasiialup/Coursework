@@ -13,11 +13,11 @@
         <img src="https://preview.redd.it/silly-cat-v0-ket76730w05a1.jpg?width=1080&crop=smart&auto=webp&s=5a426cf6c948be50fe23fd4d262d6461c4b84b39" alt="Silly Cat">
     </div>
     <div class="content">
-        <h2>About Creator</h2>
-        <p>Hello! My name is Anastasiia.</p>
-        <p>I am a passionate programmer from Zhytomyr Polytechnic University, specializing in both frontend and backend development. I have a strong interest in financial planning and helping others manage their finances effectively.</p>
-        <p>With a background in computer science and engineering, I enjoy diving deep into code and solving complex problems. My journey in the world of programming started at university, where I discovered my love for crafting elegant solutions to real-world challenges.</p>
-        <p>If you have any questions, need assistance with your projects, or would like to collaborate, feel free to reach out to me using the contact information below. I am always eager to connect with fellow developers and enthusiasts!</p>
+        <h2>Про Автора</h2>
+        <p>Привіт! Мене звати Анастасія.</p>
+        <p>Я студентка Житомирського політехнічного університету, спеціалізуюсь як у фронтенді, так і у бекенді. Маю великий інтерес до фінансового планування та допомоги іншим ефективно керувати своїми фінансами.</p>
+        <p>За освітою я комп'ютерний інженер, із захопленням поглиблююся у коді та вирішую складні завдання. Моя подорож у світ програмування розпочалася університетом, де я відкрила свою любов до створення елегантних рішень для реальних завдань.</p>
+        <p>Якщо у вас є які-небудь питання, потрібна допомога або ви бажаєте співпрацювати, будь ласка, зв'яжіться зі мною за нижчевказаними контактами. Я завжди рада спілкуванню з колегами програмістами та ентузіастами!</p>
         <div class="contact-info">
             <p><strong>Email:</strong> <a href="mailto:nastalupasina1@gmail.com">nastalupasina1@gmail.com</a></p>
             <p><strong>Instagram:</strong> <a href="https://www.instagram.com/damn_dich">@damn_dich</a></p>
