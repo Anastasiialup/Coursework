@@ -46,9 +46,9 @@ if (isset($_GET['delete_record'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Records</title>
-    <link rel="stylesheet" href="../../../public/css/records.css"> <!-- Вкажіть правильний шлях до CSS файлу -->
-    <script src="../../../public/js/cur.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
-    <script src="../../../public/js/records.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
+    <link rel="stylesheet" href="../../../public/css/records.css">
+    <script src="../../../public/js/cur.js" defer></script>
+    <script src="../../../public/js/records.js" defer></script>
 </head>
 <body>
 <?php include('../partials/header.php'); ?>
