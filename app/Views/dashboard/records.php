@@ -47,6 +47,7 @@ if (isset($_GET['delete_record'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Records</title>
     <link rel="stylesheet" href="../../../public/css/records.css"> <!-- Вкажіть правильний шлях до CSS файлу -->
+    <script src="../../../public/js/cur.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
     <script src="../../../public/js/records.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
 </head>
 <body>
@@ -94,6 +95,18 @@ if (isset($_GET['delete_record'])) {
 
         </tbody>
     </table>
+    <div class="container">
+        <h1>Конвертер Валют</h1>
+        <input type="number" id="amount" placeholder="Введіть суму">
+        <select id="fromCurrency">
+            <!-- Список валют буде заповнено динамічно -->
+        </select>
+        <select id="toCurrency">
+            <!-- Список валют буде заповнено динамічно -->
+        </select>
+        <button id="convert">Конвертувати</button>
+        <p id="result"></p>
+    </div>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="month">Month:</label><br>
@@ -123,6 +136,7 @@ if (isset($_GET['delete_record'])) {
         </select><br>
         <button type="submit">Add Record</button>
     </form>
+
 </main>
 <?php include('../partials/footer.php'); ?>
 </body>
