@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('https://static.wixstatic.com/media/aafcc4_88e3f58195dc4a2d8c0a9f9e26b18984~mv2.png/v1/fill/w_1264,h_713,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Picsart_24-06-08_16-51-27-432.png');
-    background-size: cover;
+    background-size: auto;
 }
 
 header {

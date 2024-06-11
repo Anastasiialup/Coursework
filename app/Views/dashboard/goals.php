@@ -56,6 +56,14 @@ $goals = Goal::getAllGoals($conn, $user_id);
                     <p><?php echo $goal['description']; ?></p>
                     <p>Ціна: <?php echo $goal['price'] . ' ' . $goal['currency']; ?></p>
                     <p>Статус: <?php echo $goal['status']; ?></p>
+                    <?php
+                    $difference = $wallet_balance - $goal['price'];
+                    if ($difference >= 0) {
+                        echo "<p>Можете собі дозволити</p>";
+                    } else {
+                        echo "<p>Не можете собі дозволити</p>";
+                    }
+                    ?>
                     <form method="post" action="goals.php">
                         <input type="hidden" name="goal_id" value="<?php echo $goal['id']; ?>">
                         <button type="submit" name="delete_goal">Видалити</button>
