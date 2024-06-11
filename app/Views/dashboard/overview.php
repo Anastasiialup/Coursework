@@ -87,6 +87,7 @@ if (isset($_GET['year2'])) {
 <body>
 <?php include('../partials/header.php'); ?>
 <main>
+    <h2>Переглянути статискику</h2>
     <form action="overview.php" method="get">
         <select name="month" id="month">
             <option value="January">January</option>
