@@ -12,8 +12,11 @@ class FinancialRecord {
         $this->db = $pdo;
     }
 
-    public static function getAll($db) {
-        $stmt = $db->query("SELECT * FROM financial_records");
+    public static function getAll($conn, $user_id)
+    {
+        $stmt = $conn->prepare("SELECT * FROM financial_records WHERE user_id = :user_id");
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

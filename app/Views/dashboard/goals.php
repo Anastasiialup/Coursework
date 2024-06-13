@@ -74,8 +74,8 @@ $goals = Goal::getAllGoals($conn, $user_id);
         <?php endforeach; ?>
     </div>
 
+    <h2>Досягнуті цілі</h2>
     <div class="achieved-goals">
-        <h2>Досягнуті цілі</h2>
         <?php foreach ($goals as $goal): ?>
             <?php if ($goal['status'] === 'досягнуто'): ?>
                 <div class="goal">

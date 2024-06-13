@@ -14,7 +14,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$records = FinancialRecord::getAll($conn);
+$user_id = $_SESSION['user_id'];
+$records = FinancialRecord::getAll($conn, $user_id);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['month'])) {
     $month = $_POST['month'];
@@ -47,6 +48,7 @@ if (isset($_GET['delete_record'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Records</title>
     <link rel="stylesheet" href="../../../public/css/records.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Підключаємо jQuery -->
     <script src="../../../public/js/cur.js" defer></script>
     <script src="../../../public/js/records.js" defer></script>
 </head>
@@ -64,6 +66,13 @@ if (isset($_GET['delete_record'])) {
         ?>
     </select>
     <button id="apply-filters">Застосувати фільтр</button>
+
+
+    <div class="search-container"> <!-- Add a container for search input and button -->
+        <label for="search-filter">Пошук записів:</label>
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Search...">
+        <button onclick="search()">Search</button>
+    </div>
 
     <table id="records-table">
         <thead>
@@ -91,23 +100,19 @@ if (isset($_GET['delete_record'])) {
                 <td><a href="?delete_record=<?php echo $record['id']; ?>">Видалити</a></td>
             </tr>
         <?php endforeach; ?>
-
-
         </tbody>
     </table>
+
     <div class="container">
         <h2>Конвертатор валют</h2>
         <input type="number" id="amount" placeholder="Введіть кількість">
         <select id="fromCurrency">
-            <!-- Список валют буде заповнено динамічно -->
         </select>
         <select id="toCurrency">
-            <!-- Список валют буде заповнено динамічно -->
         </select>
         <button id="convert">Конвертувати</button>
         <p id="result"></p>
     </div>
-
     <h2>Додати запис</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="month">Місяць:</label><br>
@@ -137,8 +142,31 @@ if (isset($_GET['delete_record'])) {
         </select><br>
         <button type="submit">Додати запис</button>
     </form>
-
 </main>
 <?php include('../partials/footer.php'); ?>
+<script>
+    function search() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("records-table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) { // Start loop from index 1 to exclude header row
+            var found = false;
+            for (j = 0; j < tr[i].cells.length; j++) {
+                td = tr[i].cells[j];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            tr[i].style.display = found ? "" : "none";
+        }
+    }
+
+</script>
 </body>
 </html>

@@ -12,7 +12,6 @@ $userModel = new User($conn);
 $authController = new AuthController($userModel);
 
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
-    // Обробка відправленої форми тільки у випадку, якщо REQUEST_METHOD встановлено і дорівнює "POST"
     $authController->login($_POST['username'], $_POST['password']);
 }
 
@@ -29,14 +28,32 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="container">
     <h2>Вхід на сайт</h2>
-    <form action="" method="post">
+    <form id="login-form" method="post">
         <label for="username">Логін:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
         <input type="submit" value="Увійти">
     </form>
-    <p>Ще не зареєстровані?<br> <a href="register.php">Зареєструватися тут</a>.</p> <!-- Слова "Зареєструватися тут" розміщено на новому рядку -->
+    <p>Ще не зареєстровані?<br> <a href="register.php">Зареєструватися тут</a>.</p>
+    <div id="message"></div>
 </div>
+<script>
+    document.getElementById('login-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.text();
+        document.getElementById('message').innerHTML = result;
+
+        if (response.ok) {
+            window.location.href = '../dashboard/index.php';
+        }
+    });
+</script>
 </body>
 </html>

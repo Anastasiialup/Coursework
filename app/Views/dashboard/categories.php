@@ -48,9 +48,12 @@ $categories = Category::getAll($conn, $user_id);
 </head>
 <body>
 <?php include('../partials/header.php'); ?>
-
 <main>
-    <!-- Таблиця для відображення категорій -->
+    <div class="search-container">
+        <label for="search-filter">Пошук категорій:</label>
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Пошук за назвою...">
+        <button onclick="search()">Пошук</button>
+    </div>
     <table id="categories-table">
         <thead>
         <tr>
@@ -71,8 +74,6 @@ $categories = Category::getAll($conn, $user_id);
         <?php endforeach; ?>
         </tbody>
     </table>
-
-    <!-- Форма для додавання нової категорії -->
     <form class="add-category-form" method="post">
         <label for="category-name">Назва нової категорї:</label>
         <input type="text" id="category-name" name="category_name" required>
@@ -89,6 +90,26 @@ $categories = Category::getAll($conn, $user_id);
 
 <?php include('../partials/footer.php'); ?>
 
-<script src="../../../public/js/categories.js" defer></script> <!-- Вкажіть правильний шлях до JS файлу -->
+<script src="../../../public/js/categories.js" defer></script>
+<script>
+    function search() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("categories-table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0]; // Отримуємо перший <td> у кожному рядку
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>

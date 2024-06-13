@@ -8,7 +8,6 @@
 </head>
 <body>
 <?php include('../partials/header.php'); ?>
-
 <main>
     <div class="text-container">
         <h2>Ласкаво просимо до Вашого фінансового планувальника!</h2>
@@ -16,7 +15,6 @@
         <p>Ви можете планувати свої фінанси, переглядати детальну інформацію про ваш дохід та витрати, аналізувати ваші фінансові дані за допомогою графіків та діаграм, керувати категоріями та налаштовувати ваш профіль.</p>
         <p>Натисніть на вкладки вище, щоб дослідити різні розділи панелі інструментів.</p>
     </div>
-    <!-- Новий контейнер для корисних ресурсів -->
     <div class="text-container">
         <h2>Корисні ресурси з фінансового планування</h2>
         <ul>
@@ -27,15 +25,12 @@
             <li><a href="https://www.investopedia.com" target="_blank">Investopedia</a></li>
         </ul>
     </div>
-    <!-- Кінець нового контейнера -->
     <div class="gallery">
         <img src="https://kartinki.pics/uploads/posts/2021-03/thumbs/1616072299_47-p-finansi-krasivie-foto-51.jpg" alt="Зображення Фінансів 1">
         <img src="https://kartinki.pics/uploads/posts/2021-03/1616072235_5-p-finansi-krasivie-foto-7.jpg" alt="Зображення Фінансів 2">
         <img src="https://balthazar.club/uploads/posts/2023-01/1674323043_balthazar-club-p-finansi-estetika-oboi-8.jpg" alt="Зображення Фінансів 3">
     </div>
 </main>
-
-
 <?php include('../partials/footer.php'); ?>
 </body>
 </html>

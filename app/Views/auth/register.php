@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__ . '/../../Controllers/AuthController.php';
 require_once __DIR__ . '/../../Models/User.php';
-require_once __DIR__ . '/../../../config\database.php';
+require_once __DIR__ . '/../../../config/database.php';
 
 use app\Controllers\AuthController;
 use app\Models\User;
@@ -28,7 +28,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 <body>
 <div class="container">
     <h2>Реєстрація</h2>
-    <form action="" method="post">
+    <form id="register-form" method="post">
         <label for="username">Логін:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Пароль:</label>
@@ -38,6 +38,24 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
         <input type="submit" value="Зареєструватися">
     </form>
     <p>Вже зареєстровані? <a href="login.php">Увійти тут</a>.</p>
+    <div id="message"></div>
 </div>
+<script>
+    document.getElementById('register-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.text();
+        document.getElementById('message').innerHTML = result;
+
+        if (response.ok) {
+            window.location.href = 'login.php';
+        }
+    });
+</script>
 </body>
 </html>

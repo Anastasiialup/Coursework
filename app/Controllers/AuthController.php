@@ -67,37 +67,26 @@ class AuthController
         }
     }
 
-    public function register(): void
+    public function register($username = null, $password = null, $email = null): void
     {
         if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
-            // Показуємо форму реєстрації
             include_once __DIR__ . '/../views/auth/register.php';
             return;
         }
-        // Отримуємо дані з форми реєстрації
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
 
-        // Перевіряємо коректність введених даних
-        if (empty($username) || empty($email) || empty($password)) {
-            // Виводимо повідомлення про необхідність заповнення всіх полів
+        if ($username === null || $password === null || $email === null) {
             echo "Будь ласка, заповніть всі поля";
             return;
         }
-        // Перевіряємо, чи не існує вже користувач з таким іменем або email
+
         if ($this->user->exists($username, $email)) {
-            // Користувач з таким ім'ям або email вже існує, виводимо повідомлення
             echo "Користувач з таким ім'ям або email вже існує";
             return;
         }
-        // Створюємо нового користувача
+
         if ($this->user->register($username, $email, $password)) {
-            // Реєстрація успішна, перенаправляємо на сторінку входу
-            header('Location: ../../views/auth/login.php');
-            exit;
+            echo "Реєстрація успішна";
         } else {
-            // Помилка реєстрації, виводимо повідомлення
             echo "Виникла помилка при реєстрації";
         }
     }

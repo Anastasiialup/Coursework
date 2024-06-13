@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPZ Lab 6</title>
+    <title>My coursework</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,9 +44,9 @@
     </style>
 </head>
 <body>
-<h1>Coursework</h1>
+<h1>My coursework</h1>
 <ul>
-    <li><a href="app/Views/auth/login.php">My coursework</a></li>
+    <li><a href="app/Views/auth/login.php">Coursework</a></li>
 </ul>
 </body>
 </html>
